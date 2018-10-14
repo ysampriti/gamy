@@ -1,0 +1,23 @@
+* {
+	padding: 0;
+	margin : 0;
+}
+
+body {
+	width: 100vw;
+	height : 100vh;
+}
+
+canvas {
+	background-color : #d4d4d4;
+	justify-content: center;
+	/*text-align: center;*/
+}
+
+#canvas-container {
+	flex-direction: column;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
