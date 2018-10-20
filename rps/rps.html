@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rock Paper Sissors</title>
+	<link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="rps.css">
+</head>
+<body>
+	
+	<header> 
+		<h1> ROCK PAPER SCISSORS  </h1>
+	</header>
+	
+	<div class="score-board">
+		<div class="badge" id="user-label"> user </div>
+		<div class="badge" id="comp-label"> comp </div>
+		<span id="user-score">0</span>
+		<span id="colon"> : </span>
+		<span id="comp-score">0</span>
+	</div>
+
+	<div class="result">
+		<p>Paper covers rock. You win!</p>
+	</div>
+
+	<div class="choices"> 
+		<div class="choice" id="r">
+			<img src="rock.png">
+		</div>
+		<div class="choice" id="p">
+			<img src="paper.png">
+		</div>
+		<div class="choice" id="s">
+			<img src="sissors.png">
+		</div>
+	</div>
+
+	<p id="action-message"> MAKE YOUR MOVE</p>
+	<p id="reset"> RESET </p>
+	<script type="text/javascript" src="rps.js"></script>
+
+</body>
+</html>

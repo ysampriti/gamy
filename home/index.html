@@ -3,75 +3,217 @@
 <head>
 	<title>home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-	<nav id="nav">
-		<p id="heading"> Gamy </p>
-	</nav>
-	<div id="game-container">
-		<div class="desc">
-			<h3 id="description"> come have fun! </h3>
-			<hr id="desSeperator">
-		</div>
-		
-		<div class="default" id="tetrisD">
-			<img class="gameLogo" src="tetrisLogo.jpg">
-			<p class="gameText"> THE BLOCK CHALLANGE</p>
-		</div>
-		<div class="select" id="tetrisS">
-			<p class="selectText"></p>
-		</div>
-		<hr class="gameHr">
+	<section id="total-container">
+    	
+		<nav id="nav">
+			<p id="heading"> Gamy </p>
+		</nav>
 
-		<div class="default" id="snakeD">
-			<img class="gameLogo" src="">
-			<p class="gameText"></p>
+		<div id="option-container">
+			<div id="options">
+				<a class="optionValues" id="gotoHome" href="#">	HOME	</a>
+				<a class="optionValues" id="gotoLogin" href="#login-container">	LOGIN	</a>
+				<a class="optionValues" id="gotoGames" href="#game-container">	GAMES	</a>
+				<a class="optionValues" id="gotoOurteam" href="#ourteam-container">	OUR TEAM	</a>
+				<div class="line">	</div>
+			</div>
 		</div>
-		<div class="select" id="snakeS">
-			<p class="selectText"></p>
-		</div>
-		<hr class="gameHr">
 
-		<div class="default"  id="flappyD">
-			<img class="gameLogo" src="">
-			<p class="gameText"></p>
+		<div id="login-container">
+			<section id="login">
+				<form>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Email address</label>
+				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Password</label>
+				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				  </div>
+				  <div class="form-group form-check">
+				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+				    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+				  </div>
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</section>
+
+			<section id="register">
+				<form>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Email address</label>
+				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Password</label>
+				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				  </div>
+				  <div class="form-group form-check">
+				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+				    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+				  </div>
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</section>
 		</div>
-		<div class="select"  id="flappyS">
-			<p class="selectText"></p>
+
+		<div id="game-container">
+			<div class="whole-card">
+   
+              <div class="card-container">
+
+                <div class="card" id="tetris">
+                  <div class="card-contents card-front">
+                    <div class="card-depth">
+                      <h2 class="card-text">Tetris</h2>
+                      <hr>
+                      <p class="card-text">For 3D rotation</p>
+                    </div>
+                  </div>
+                  <div class="card-contents card-back">
+                    <div class="card-depth">
+                      <h2 class="card-text">Tetris</h2>
+                      <hr>
+                      <p class="card-text" id="tetris-start">click to start</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card" id="flappy">
+                    <div class="card-contents card-front">
+                        <div class="card-depth">
+                            <h2 class="card-text">Flappy Bird</h2>
+                            <hr>
+                            <p class="card-text">For 3D rotation</p>
+                        </div>
+                    </div>
+                    <div class="card-contents card-back">
+                        <div class="card-depth">
+                            <h2 class="card-text">Flappy Bird</h2>
+                            <hr>
+                            <p class="card-text" id="flappy-start">click to start</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="brick">
+                    <div class="card-contents card-front">
+                        <div class="card-depth">
+                            <h2 class="card-text">Brick</h2>
+                            <hr>
+                            <p class="card-text">For 3D rotation</p>
+                        </div>
+                    </div>
+                    <div class="card-contents card-back">
+                        <div class="card-depth">
+                            <h2 class="card-text">Brick</h2>
+                            <hr>
+                            <p class="card-text" id="brick-start">click to start</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="rps">
+                    <div class="card-contents card-front">
+                        <div class="card-depth">
+                            <h2 class="card-text">Rock Paper Scissors</h2>
+                            <hr>
+                            <p class="card-text">For 3D rotation</p>
+                        </div>
+                    </div>
+                    <div class="card-contents card-back">
+                        <div class="card-depth">
+                            <h2 class="card-text">Rock Paper Scissors</h2>
+                            <hr>
+                            <p class="card-text" id="rps-start">click to start</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="snake">
+                    <div class="card-contents card-front">
+                        <div class="card-depth">
+                            <h2 class="card-text">snake</h2>
+                            <hr>
+                            <p class="card-text">For 3D rotation</p>
+                        </div>
+                    </div>
+                    <div class="card-contents card-back">
+                        <div class="card-depth">
+                            <h2 class="card-text">snake</h2>
+                            <hr>
+                            <p class="card-text" id="snake-start">click to start</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="pong">
+                    <div class="card-contents card-front">
+                        <div class="card-depth">
+                            <h2 class="card-text">PONG</h2>
+                            <hr>
+                            <p class="card-text">For 3D rotation</p>
+                        </div>
+                    </div>
+                    <div class="card-contents card-back">
+                        <div class="card-depth">
+                            <h2 class="card-text">PONG</h2>
+                            <hr>
+                            <p class="card-text" id="pong-start">click to start</p>
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+       
+              </div>
 		</div>
-		<hr class="gameHr">
-		
-		<div class="default"  id="pongD">
-			<img class="gameLogo" src="">
-			<p class="gameText"></p>
+
+		<div id="ourteam-container">
+            <div id="user-container">
+
+                <div class="user-card" id="monil-card">
+                    <img src="monil.jpg" style="width:100%">
+                    <h1>Monil Bansal</h1>
+                    <p class="title">Senior Web Developer</p>
+                    <p>DTU</p>
+                    <div style="margin: 24px 0 0 0;">
+                        <a href="https://github.com/monil-bansal" class="social-link"><i class="fa fa-git"></i></a> 
+                        <a href="https://twitter.com/MonilBansal" class="social-link"><i class="fa fa-twitter"></i></a>  
+                        <a href="https://www.linkedin.com/in/monil-bansal-380057148/" class="social-link"><i class="fa fa-linkedin" ></i></a>  
+                        <a href="https://www.facebook.com/monil.bansal.121" class="social-link"><i class="fa fa-facebook"></i></a> 
+                    </div>
+                    <p><button class="contact-button">Contact</button></p>
+                </div>
+
+                <div class="user-card" id="sampriti-card">
+                    <img src="sampriti.jpg" style="width:100%">
+                    <h1>Sampriti Yadav</h1>
+                    <p class="title">Junior Web Developer</p>
+                    <p>DTU</p>
+                    <div style="margin: 24px 0 0 0;">
+                        <a href="https://github.com/ysampriti" class="social-link"><i class="fa fa-git"></i></a> 
+                        <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>  
+                        <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>  
+                        <a href="https://www.facebook.com/sam.mclarson" class="social-link"><i class="fa fa-facebook"></i></a> 
+                    </div>
+                    <p><button class="contact-button">Contact</button></p>
+                </div>
+
+            </div>
+            <footer>
+                MADE WITH LOVE!
+            </footer>
+        }
 		</div>
-		<div class="select"  id="pongS">
-			<p class="selectText"></p>
-		</div>
-		<hr class="gameHr">
-		
-		<div class="default"  id="rpsD">
-			<img class="gameLogo" src="">
-			<p class="gameText"></p>
-		</div>
-		<div class="select"  id="rpsS">
-			<p class="selectText"></p>
-		</div>
-		<hr class="gameHr">
-		
-		
-		
-		<div class="default"  id="brickD">
-			<img class="gameLogo" src="">
-			<p class="gameText"></p>
-		</div>
-		<div class="select"  id="brickS">
-			<p class="selectText"></p>
-		</div>
-	</div>
-<img src="">
+	</section>	<!-- END OF TOTAL-CONTAINER  -->
+	
 	<script type="text/javascript" src="script.js"></script>
-
-
 </body>
 </html>

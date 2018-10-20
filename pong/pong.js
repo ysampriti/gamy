@@ -12,7 +12,7 @@ class Vec{
 		this.x *= fact;
 		this.y *= fact;
 	}
-}
+}	
 
 // class for a Rectangular object (the Fattas and the ball)
 class Rect{
@@ -23,7 +23,7 @@ class Rect{
 
 	get left(){
 		return this.pos.x //- this.size.x/2
-	}
+	} 
 	get right(){
 		return this.pos.x + this.size.x
 	}
@@ -47,13 +47,12 @@ class Player extends Rect{
 	constructor(){
 		super(20,100);
 		this.score = 0;
-
+		this.upPressed = false;
+		this.downPressed = false;
 	}
-
 }
 
 class Pong{
-
 	constructor(canvas){
 		this.scoreBoard = document.getElementById('score');
 		this._canvas = canvas;
@@ -100,6 +99,12 @@ class Pong{
 		this._context.fillStyle = '#000';
 		this._context.fillRect(0, 0, this._canvas.width, this._canvas.height);
 		this.drawRect(this.ball);
+		if(this.players[1].upPressed){
+			this.players[1].pos.y -= 5;
+		}
+		else if(this.players[1].downPressed){
+			this.players[1].pos.y += 5;
+		}
 		this.players.forEach(player => this.drawRect(player));
 
 	}
@@ -141,12 +146,23 @@ class Pong{
 	
 		document.addEventListener('keydown', e => {
 			if(e.which == 38 && this.players[1].pos.y>0){
-				pong.players[1].pos.y -= 0.1;
+				pong.players[1].upPressed = true;
 			}
 			else if(e.which == 40 && this.players[1].pos.y + 100 < this._canvas.height){
-				pong.players[1].pos.y += 0.1;	
+				pong.players[1].downPressed = true;	
 			}
 		});
+
+		document.addEventListener('keyup', e => {
+			if(e.which == 38){
+				pong.players[1].upPressed = false;
+			}
+			else if(e.which == 40){
+				pong.players[1].downPressed = false;	
+			}
+		});
+
+
 
 		// this.players[1].pos.y = this.ball.pos.y
 		this.players.forEach(player => this.collide(player, this.ball))
