@@ -1,4 +1,6 @@
 const canvas = document.getElementById('tetris');
+
+
 const context = canvas.getContext('2d');
 
 context.scale(20, 20);
@@ -26,9 +28,9 @@ function collide(arena, player) {
     const o = player.pos;
     for (let y = 0; y < m.length; ++y) {
         for (let x = 0; x < m[y].length; ++x) {
-            if ((m[y][x]) &&
-               //(arena[y + o.y])&&
-                arena[y + o.y][x + o.x]) {
+            if (m[y][x] !== 0 &&
+               (arena[y + o.y] &&
+                arena[y + o.y][x + o.x]) !== 0) {
                 return true;
             }
         }
@@ -105,6 +107,7 @@ function drawMatrix(matrix, offset) {
 }
 
 function draw() {
+   
     context.fillStyle = '#000';
     context.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -208,7 +211,7 @@ function update(time = 0) {
 }
 
 function updateScore() {
-    document.getElementById('score').innerText = player.score;
+    document.getElementById('score').innerText = `Score:  ${player.score}`;
 }
 
 document.addEventListener('keydown', event => {
@@ -236,7 +239,6 @@ const colors = [
     '#3877FF',
 ];
 
-//to create bg matrix;
 const arena = createMatrix(12, 20);
 
 const player = {

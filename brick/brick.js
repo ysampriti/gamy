@@ -73,7 +73,7 @@ let drawBall = () => {
 let drawPaddle = () => {
 	ctx.beginPath();
 	ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-	ctx.fillStyle = 'red';
+	ctx.fillStyle = '#aaa';
 	ctx.fill();
 	ctx.closePath();
 }
@@ -83,7 +83,7 @@ let drawBricks = () => {
 		if(!brick.status) return;
 		ctx.beginPath();
 		ctx.rect(brick.x, brick.y, brickWidth, brickHeight);
-		ctx.fillStyle = "#1B5E20";
+		ctx.fillStyle = "#006F3F";
 		ctx.fill();
 		ctx.closePath();
 	});
