@@ -12,7 +12,7 @@ body {
     } 
 canvas {
         border: solid .2em #fff;
-        height: 70vh;
+        height: 65vh;
       }
 #cotaier{
 	display: flex;

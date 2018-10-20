@@ -96,6 +96,7 @@ class Pong{
 	}
 
 	draw(){
+
 		this._context.fillStyle = '#000';
 		this._context.fillRect(0, 0, this._canvas.width, this._canvas.height);
 		this.drawRect(this.ball);
@@ -106,6 +107,7 @@ class Pong{
 			this.players[1].pos.y += 5;
 		}
 		this.players.forEach(player => this.drawRect(player));
+		
 
 	}
 
@@ -128,7 +130,7 @@ class Pong{
 	update (dt) {
 		this.ball.pos.x += this.ball.vel.x * dt;
 		this.ball.pos.y += this.ball.vel.y * dt;
-		this.scoreBoard.innerHTML = ${this.players[0].score} : ${this.players[1].score}
+		this.scoreBoard.innerHTML = `${this.players[0].score} : ${this.players[1].score}`
 		if(this.ball.left < 0 || this.ball.right > this._canvas.width){
 			let playerId;
 			if(this.ball.vel.x < 0){
