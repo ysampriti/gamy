@@ -63,16 +63,6 @@ class SnakeGame{
 
 		this._ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-		let lastTime = null;
-		const callback = (millis) => {
-			if(lastTime){
-				this.update((millis - lastTime) / 1000);
-			}
-			lastTime = millis;
-			requestAnimationFrame(callback);
-		};
-		callback();
-		this.reset();
 	}
 
 	checkCollisionWithSelf(snake){
@@ -87,13 +77,13 @@ class SnakeGame{
 
 	drawFood(){
 		this._ctx.fillStyle = 'red';
-		this._ctx.fillRect(this.food.pos.x, this.food.pos.y, this.food.size.x, this.food.size.y);
+		this._ctx.fillRect(this.food.pos.x * 10, this.food.pos.y * 10, this.food.size.x, this.food.size.y);
 	}
 
 	drawSnake(){
 		this.snake.self.forEach((s) => {
 			this._ctx.fillStyle = 'white';
-			this._ctx.fillRect(s.pos.x, s.pos.y, s.size.x, s.size.y);
+			this._ctx.fillRect(s.pos.x * 10, s.pos.y * 10, s.size.x, s.size.y);
 		});
 	}
 
@@ -106,6 +96,9 @@ class SnakeGame{
 	}
 
 	reset(){
+		while(this.snake.self[0]){
+			this.snake.self.pop();
+		}
 		for(let i = this.snake.size - 1; i >= 0; i--){
 			let block = new Rect(10, 10);
 			block.pos.x = i;
@@ -146,12 +139,14 @@ class SnakeGame{
 		// 	newNode.pos.x =  
 		// }
 		//this.snake.head.pos.x < 0 || this.snake.head.pos.x > this._canvas.width || this.snake.head.pos.y < 0 || this.snake.head.pos.y > this._canvas.height
-		if(this.checkCollisionWithSelf(this.snake)){
+		if(this.snake.self[0].pos.x < 0 || this.snake.self[0].pos.x > this._canvas.width || this.snake.self[0].pos.y < 0 || this.snake.self[0].pos.y > this._canvas.height || this.checkCollisionWithSelf(this.snake)){
+			console.log("monil");
 			this.reset();
 		}	
 
 		this.draw();
 	}
+	setInterval(update,60);
 }
 
 
