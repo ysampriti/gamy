@@ -9,23 +9,7 @@ window.onload = function() {
 	let snakeW = 10;
 	let snakeH = 10;
 
-	let cursorXpos ;
-	let cursorYpos ;
-	let downXpos,downYpos,upXpos,upYpos;
-	//to get cursor position
-	function init() {
-		if (window.Event) {
-			document.captureEvents(Event.MOUSEMOVE);
-		}
-		document.onmousemove = getCursorXY;
-	}
-
-	function getCursorXY(e) {
-		cursorXpos = (window.Event) ? e.pageX  : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
-		cursorYpos = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
-
-	}
-
+	
 	function drawSnake(x,y){
 		ctx.fillStyle = "#FFF";
 		ctx.fillRect(x* snakeW, y* snakeH, snakeW, snakeH);
@@ -56,43 +40,7 @@ window.onload = function() {
 			}
 		}
 
-	let mousedown = (e) => {
-		downXpos = cursorXpos;
-		downYpos = cursorYpos;
-		
-	}
-
-	let mouseup = (e) => {
-		upXpos = cursorXpos;
-		upYpos = cursorYpos;
-		swipeHor = upXpos - downXpos;
-		swipeVer = upYpos - downYpos;
-		if(Math.abs(swipeVer)>Math.abs(swipeHor)){
-			if(swipeVer>0 && direction!="up"){
-				direction="down";
-			}
-			else if(swipeVer<0 && direction!="down"){
-				direction = "up";
-			}
-		}else{
-			if(swipeHor>0 && direction!="left"){
-				direction="right";
-			}
-			else if(swipeHor<0 && direction!="right"){
-				direction = "left";
-			}
-
-		}
-	
-
-
-	}
-		
-
-	document.addEventListener("keydown",getDirection);
-	document.addEventListener("mousedown", mousedown);
-	document.addEventListener("mouseup" , mouseup);
-	
+	document.addEventListener("keydown", getDirection);
 
 	for(let i=len-1;i>=0;i--){
 		snake.push(
@@ -118,21 +66,13 @@ window.onload = function() {
 	}
 
 	//check collision of snake with itself
-	let checkCollision = (x,y,array) => {
+	let checkCollision = (x, y, array) => {
 		for(let i = 1; i < array.length; i++){
 			if( x==array[i].x && y==array[i].y ){
 				return true;
 			}
 		}
-		
 		return false;
-	}
-
-	let drawScore = (score) => {
-		ctx.fillStyle = "green";
-		ctx.font = "15px Verdana";
-		ctx.fillText("score: "+score,5,cvsH-5);
-
 	}
 
 	function draw(){
@@ -184,8 +124,7 @@ window.onload = function() {
 
 
 	}
-
-	setInterval(init,1);
+	
 	setInterval(draw,60);
 }
 

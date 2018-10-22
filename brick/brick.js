@@ -18,8 +18,10 @@ let paddledX = 7;
 
 let brickRows = 3;
 let brickCols = 9;
+
 let brickWidth = 75;
 let brickHeight = 20;
+
 let brickPadding = 30;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
@@ -40,6 +42,9 @@ for (c=0; c<brickCols; c++){
 let rightPressed=false;
 let leftPressed=false;
 
+
+
+//start
 let keyDownHandler = (event) => {
 	if(event.keyCode === 39){
 		rightPressed = true;
@@ -48,7 +53,6 @@ let keyDownHandler = (event) => {
 		leftPressed = true;
 	}
 }
-
 let keyUpHandler = (event) => {
 	if(event.keyCode === 39){
 		rightPressed = false;
@@ -57,6 +61,9 @@ let keyUpHandler = (event) => {
 		leftPressed = false;
 	}
 }
+//end
+
+
 
 document.addEventListener('keydown', keyDownHandler, false);
 document.addEventListener('keyup', keyUpHandler, false);

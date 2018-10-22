@@ -1,3 +1,8 @@
+*{
+	margin: 0;
+}
+
+
 body{
 	display: flex;
 	align-items: center;
@@ -5,9 +10,53 @@ body{
 	margin: 0;
 }
 
+.container{
+	display: flex;
+	flex-direction: column;
+
+}
+
 #pongCanvas {
 	margin : auto auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: center;	
+}
+
+#score{
+	margin: 10px 0 20px 0;
+	border: 1px solid white;
+	padding : 5px 20px;
+}
+
+#headig {
+	width: 100vw;
+	background-color: white;
+	color : #202028;
+	padding-top:0.5rem;
+	padding-bottom: 0.5rem;
+	text-align: center;
+	font-size: 170%;
+	font-family: sans-serif;
+	font-weight: bold;
+
+}
+#goback{
+	text-align: center;
+	font-family: Asap , sans-serif;
+	font-size: 20px;
+	border : 1px solid #464647;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #25292b;
+	margin: 30px auto;
+	width: 200px;
+	color:white;
+}
+
+#goback:active{
+	box-shadow:  0 0 0 #464647;
+	border : 0.1px solid #464647;
+}
+a{
+	text-decoration: none;
 }
