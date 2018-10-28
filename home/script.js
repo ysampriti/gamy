@@ -2,7 +2,7 @@ let gotoLogin = document.getElementById('gotoLogin');
 let gotoHome = document.getElementById('gotoHome');
 let gotoGames = document.getElementById('gotoLogin');
 let gotoOurteam = document.getElementById('gotoOurteam');
-
+let down = document.getElementById('array');
 const tetris = document.getElementById('tetris');
 const tetrisStart = document.getElementById('tetris-start');
 const flappy = document.getElementById('flappy');
@@ -16,6 +16,8 @@ const rpsStart = document.getElementById('rps-start');
 const snake = document.getElementById('snake');
 const snakeStart = document.getElementById('snake-start');
 
+
+down.addEventListener('click',)
 
 const clickRotate = (game) => {
 	game.classList.toggle('rotated');

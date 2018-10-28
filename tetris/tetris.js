@@ -42,7 +42,7 @@ function createMatrix(w, h) {
         matrix.push(new Array(w).fill(0));
     }
     return matrix;
-}
+} 
 
 function createPiece(type)
 {

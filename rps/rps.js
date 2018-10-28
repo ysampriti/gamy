@@ -27,7 +27,7 @@ const getComputerChoice =  () => {
 const wins = (userChoice , computerChoice)  => {	
 	userScore++;
 	userScore_span.innerHTML = userScore;
-	colon.innerHTML = ":";
+	colon.innerHTML = ":"; 
 	compScore_span.innerHTML = computerScore;
 	document.getElementById(userChoice).classList.add("green-glow");
 	setTimeout(() => document.getElementById(userChoice).classList.remove("green-glow"), 300);
@@ -100,8 +100,5 @@ paper_div.addEventListener('click' , function(){
 scissors_div.addEventListener('click' , () => game('s'))
 
 reset.addEventListener('click' , () => {
-	userScore = 0; 
-	computerScore = 0;
-	userScore_span.innerHTML = userScore;
-	compScore_span.innerHTML = computerScore
+	window.location.href = 'file:///D:/tech/oops/gamy/home/index.html'
 })
