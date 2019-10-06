@@ -22,7 +22,7 @@ const clickRotate = (game) => {
 };
 
 const openLoaction = (game) => {
-    window.location.href =  `file:///D:/tech/oops/gamy/${game}/${game}.html`;
+    window.location.href =  `./${game}/${game}.html`;
 };
 
 tetrisStart.addEventListener('click' , () => {
